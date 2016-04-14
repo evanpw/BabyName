@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link href='/static/login.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="container">
+    <form class="form-signin" method="post">
+        <h2 class="form-signin-heading">Please login</h2>
+        <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" value="{{ request.form.username }}"/>
+        <input type="password" class="form-control" name="password" placeholder="Password" required="" value="{{ request.form.password }}"/>      
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+    
+        <br>
+        {% if error %}
+        <div class="alert alert-danger"><strong>Error:</strong>{{ error }}</div>
+        {% endif %}
+    </form>
+</div>
+</body>
+</html>
